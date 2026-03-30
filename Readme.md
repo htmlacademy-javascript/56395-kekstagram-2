@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Диана Бродовая](https://up.htmlacademy.ru/javascript-individual/2/user/56395).
-* Наставник: `Евгения Подопригора`.
+* Наставник: [Евгения Подопригора](https://htmlacademy.ru/profile/id2387199).
 
 ---
 
