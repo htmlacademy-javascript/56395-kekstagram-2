@@ -15,6 +15,7 @@ checkStringLength('qwertyuiopa', 10); // false
 
 
 //Функция для проверки, является ли строка палиндромом.
+
 function checkStringPalindrome(str) {
   const normalizedStr = str.replaceAll(' ', '').toLowerCase();
   let reversedStr = '';
@@ -45,7 +46,6 @@ function extractNumber(str) {
   const normalizedStr = str.toString();
   let resultStr = '';
 
-  // Перебираем строку посимвольно
   for (let i = 0; i < normalizedStr.length; i++) {
     const char = normalizedStr.at(i);
     if (!Number.isNaN(parseInt(char, 10))) {
