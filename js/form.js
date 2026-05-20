@@ -89,15 +89,23 @@ const openUploadForm = () => {
 
 const parseHashtags = (value) => value.trim().toLowerCase().split(/\s+/).filter(Boolean);
 
-const validateHashtagsCount = (value) => parseHashtags(value).length <= MAX_HASHTAGS_COUNT;
+const validateHashtagsCount = (value) => {
+  if (!value || value.trim() === '') {
+    return true;
+  }
+  return parseHashtags(value).length <= MAX_HASHTAGS_COUNT;
+};
 
 const validateHashtagsUnique = (value) => {
+  if (!value || value.trim() === '') {
+    return true;
+  }
   const tags = parseHashtags(value);
   return tags.length === new Set(tags).size;
 };
 
 const validateHashtagsFormat = (value) => {
-  if (!value) {
+  if (!value || value.trim() === '') {
     return true;
   }
   return parseHashtags(value).every((tag) => HASHTAG_REGEX.test(tag));

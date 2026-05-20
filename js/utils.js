@@ -1,11 +1,11 @@
+const REMOVE_ALERT_TIMEOUT = 5000;
+
 function getRandomNumber(a, b) {
   const min = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
   const max = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
   const result = Math.random() * (max - min + 1) + min;
   return Math.floor(result);
 }
-
-const REMOVE_ALERT_TIMEOUT = 5000;
 
 const showDataError = () => {
   const errorTemplate = document.querySelector('#data-error').content.querySelector('.data-error');
