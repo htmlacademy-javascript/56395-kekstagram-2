@@ -1,12 +1,5 @@
 const REMOVE_ALERT_TIMEOUT = 5000;
 
-function getRandomNumber(a, b) {
-  const min = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const max = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (max - min + 1) + min;
-  return Math.floor(result);
-}
-
 const showDataError = () => {
   const errorTemplate = document.querySelector('#data-error').content.querySelector('.data-error');
   const errorElement = errorTemplate.cloneNode(true);
@@ -57,12 +50,12 @@ const showMessage = (templateId, buttonClass) => {
 const showSuccessMessage = () => showMessage('#success', '.success__button');
 const showErrorMessage = () => showMessage('#error', '.error__button');
 
-function debounce (callback, timeoutDelay = 500) {
+const debounce = (callback, timeoutDelay = 500) => {
   let timeoutId;
   return (...rest) => {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
   };
-}
+};
 
-export { getRandomNumber, showDataError, showSuccessMessage, showErrorMessage, debounce };
+export { showDataError, showSuccessMessage, showErrorMessage, debounce };
