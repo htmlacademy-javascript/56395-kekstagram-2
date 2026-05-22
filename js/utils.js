@@ -34,6 +34,10 @@ function onOutsideClick(evt) {
   }
 }
 
+const onCloseButtonClick = () => {
+  hideMessage();
+};
+
 const showMessage = (templateId, buttonClass) => {
   const template = document.querySelector(templateId).content.querySelector('section');
   const messageElement = template.cloneNode(true);
@@ -41,7 +45,7 @@ const showMessage = (templateId, buttonClass) => {
   document.body.append(messageElement);
 
   const closeButton = messageElement.querySelector(buttonClass);
-  closeButton.addEventListener('click', hideMessage);
+  closeButton.addEventListener('click', onCloseButtonClick);
 
   document.addEventListener('keydown', onMessageEscKeydown);
   document.addEventListener('click', onOutsideClick);

@@ -61,6 +61,10 @@ const closeBigPicture = () => {
   commentsShown = 0;
 };
 
+const onCloseButtonClick = () => {
+  closeBigPicture();
+};
+
 const onDocumentKeydown = (evt) => {
   if (evt.key === 'Escape') {
     evt.preventDefault();
@@ -88,6 +92,6 @@ const openBigPicture = (photo) => {
   document.addEventListener('keydown', onDocumentKeydown, { once: true });
 };
 
-closeButton.addEventListener('click', closeBigPicture);
+closeButton.addEventListener('click', onCloseButtonClick);
 
 export { openBigPicture };

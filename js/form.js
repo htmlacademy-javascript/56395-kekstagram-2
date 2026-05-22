@@ -87,6 +87,14 @@ const openUploadForm = () => {
   }
 };
 
+const onUploadInputChange = () => {
+  openUploadForm();
+};
+
+const onCancelButtonClick = () => {
+  closeUploadForm();
+};
+
 const parseHashtags = (value) => value.trim().toLowerCase().split(/\s+/).filter(Boolean);
 
 const validateHashtagsCount = (value) => {
@@ -137,8 +145,8 @@ pristine.addValidator(
   `Длина комментария не может быть больше ${MAX_COMMENT_LENGTH} символов`
 );
 
-uploadInput.addEventListener('change', openUploadForm);
-cancelButton.addEventListener('click', closeUploadForm);
+uploadInput.addEventListener('change', onUploadInputChange);
+cancelButton.addEventListener('click', onCancelButtonClick);
 
 uploadForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
